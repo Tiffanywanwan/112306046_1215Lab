@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>User Input Comparison</title>
+    
+</head>
+<body>
+
+    <script>
+	    var num1 = window.prompt("Enter 1st input");
+var num2 = window.prompt("Enter 2nd input");
+
+var resultContainer = document.createElement("div");
+resultContainer.classList.add("result-container");
+document.body.appendChild(resultContainer);
+
+var buttonContainer = document.createElement("div");
+buttonContainer.classList.add("button-container");
+document.body.appendChild(buttonContainer);
+
+var button1 = document.createElement("input");
+button1.type = "button";
+button1.value = "1st button";
+button1.onclick = function() {
+    alert("1st Input: " + num1);
+};
+buttonContainer.appendChild(button1);
+
+var button2 = document.createElement("input");
+button2.type = "button";
+button2.value = "2nd button";
+button2.onclick = function() {
+    alert("2nd Input: " + num2);
+};
+buttonContainer.appendChild(button2);
+
+if (parseFloat(num1) > parseFloat(num2)) {
+    document.body.style.backgroundColor = "lightblue";
+    resultContainer.textContent = num1 + " > " + num2;
+} else if (parseFloat(num2) > parseFloat(num1)) {
+    document.body.style.backgroundColor = "orange";
+    resultContainer.textContent = num2 + " > " + num1;
+} else {
+    document.body.style.backgroundColor = "lightyellow";
+    resultContainer.textContent = num2 + " == " + num1;
+}
+
+    </script>
+
+</body>
+</html>
+
+
